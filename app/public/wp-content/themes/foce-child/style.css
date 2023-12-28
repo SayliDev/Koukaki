@@ -8,15 +8,74 @@
  Version: 0.1
  */
 /* Modification de l'image en video */
- .banner {
+ /* .banner {
+    animation: fadeInSlideDown 1s ease-out;
+
     img{
         z-index: 2;
+        animation: fadeInSlideUp 1.5s ease-out;
     }
     video {
         position: absolute;
         z-index: 1;
       }
  }
+ @keyframes fadeInSlideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px); 
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+ @keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} */
+
+.banner {
+    animation: fadeInSlideDown 1s ease-out;
+}
+
+.banner img {
+    z-index: 2;
+    animation: fadeInSlideUp 1s ease-out;
+}
+
+.banner video {
+    position: absolute;
+    z-index: 1;
+}
+
+@keyframes fadeInSlideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(170px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
  /* regle pour mobile */
  @media only screen and (max-width: 1768px) { /*768px*/
