@@ -7,3 +7,22 @@
  Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
+/* Modification de l'image en video */
+ .banner {
+    img{
+        z-index: 2;
+    }
+    video {
+        position: absolute;
+        z-index: 1;
+      }
+ }
+
+ /* regle pour mobile */
+ @media only screen and (max-width: 1768px) { /*768px*/
+    .banner {
+        video {
+            display: none;
+          }
+    }
+ }
