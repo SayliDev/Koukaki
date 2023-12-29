@@ -7,40 +7,8 @@
  Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
-/* Modification de l'image en video */
- /* .banner {
-    animation: fadeInSlideDown 1s ease-out;
 
-    img{
-        z-index: 2;
-        animation: fadeInSlideUp 1.5s ease-out;
-    }
-    video {
-        position: absolute;
-        z-index: 1;
-      }
- }
- @keyframes fadeInSlideDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-50px); 
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
- @keyframes fadeInSlideUp {
-    0% {
-        opacity: 0;
-        transform: translateY(100px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-} */
-
+ /* Animation pour le banner */
 .banner {
     animation: fadeInSlideDown 1s ease-out;
 }
@@ -77,11 +45,41 @@
     }
 }
 
- /* regle pour mobile */
- @media only screen and (max-width: 1768px) { /*768px*/
+ /* Retire la vidéo du banner pour les ecrans plus petits */
+ @media only screen and (max-width: 768px) { /*768px*/
     .banner {
         video {
             display: none;
           }
     }
  }
+
+/* Animation pour les fleurs */
+ .story__article::after, .story h2::after {
+    animation: rotate 15s linear infinite;
+ }
+
+ @keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+ }
+
+/* Animation pour les sections au chargement de la page */
+section:not(.banner) {
+    opacity: 0;
+    animation: fadeInSection 1s ease-in-out forwards;
+
+}
+
+@keyframes fadeInSection {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
