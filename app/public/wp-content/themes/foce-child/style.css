@@ -117,3 +117,35 @@ section:not(.banner) {
         text-align: center;
     }
 }
+
+/* -------------------------------------------------------------------------- */
+/*                   style pour le carrousel des personnages                  */
+/* -------------------------------------------------------------------------- */
+
+.carrousel-characters{
+ display: flex;
+}
+
+.swiper-wrapper img{
+    max-width: none;
+}
+
+/*A revoir*/
+.swiper-container {
+    overflow: hidden; /* Masquer le débordement horizontal */
+    max-width: 100%; /* Assurer que le conteneur n'excède pas la largeur de l'écran */
+      overflow-x: hidden; /* Masquer le débordement horizontal */
+      text-align: center;
+  }
+  
+  .story #characters {
+
+    text-align: left;
+}
+
+.main-character h3{
+    background-position: left;
+    text-align: left;
+    margin-left: 12em;
+    padding: 1.2em 2em;
+}
