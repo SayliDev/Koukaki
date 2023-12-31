@@ -89,7 +89,7 @@ section:not(.banner) {
 /* -------------------------------------------------------------------------- */
 
 .nomination-section {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 .nomination-section h3 {
     background-image: url("./assets/images/orange_nomination_bg.png");
@@ -148,4 +148,30 @@ section:not(.banner) {
     text-align: left;
     margin-left: 12em;
     padding: 1.2em 2em;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               style pour les nuages                        */
+/* -------------------------------------------------------------------------- */
+
+.story #place {
+    background-image: url("./assets/images/Studio_Koukaki-image_place.png");
+}
+
+.clouds {
+    position: relative;
+}
+
+.clouds img {
+    position: absolute;
+    top: 10%; 
+    left: 985px;
+    max-width: none;
+    filter: blur(1.2rem);
+}
+
+.clouds img.little{
+    top: 35%;
+    left: 730px;
+    filter: blur(1.2rem);
 }
