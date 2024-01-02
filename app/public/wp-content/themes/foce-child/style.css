@@ -16,6 +16,13 @@
 .banner img {
     z-index: 2;
     animation: fadeInSlideUp 1s ease-out;
+} 
+
+
+@media (max-width: 1373px) {
+    .banner img {
+        width: auto; 
+    }
 }
 
 .banner video {
@@ -106,9 +113,12 @@ section:not(.banner) {
 }
 
 /* styles responsives pour les écrans de taille moyenne */
-@media (max-width: 1373px) {
+@media (max-width: 1400px) {
     .nomination-section h3 {
-        padding: 2em 1em;
+        padding: 2em 3em;
+        font-size: 2.125rem;
+        max-width: 56%;
+
     }
 
     .nomination-content {
@@ -116,7 +126,25 @@ section:not(.banner) {
         flex-direction: column;
         text-align: center;
     }
+    .story__article{
+        padding-bottom: 0;
+    }
 }
+
+@media (max-width: 1160px) {
+    .nomination-section h3 {
+        font-size: 1.7em;
+    }
+}
+
+@media (max-width: 945px) {
+    .nomination-section h3 {
+        font-size: 1.4em;
+        max-width: 54%;
+    }
+
+}
+
 
 /* -------------------------------------------------------------------------- */
 /*                   style pour le carrousel des personnages                  */
@@ -150,6 +178,14 @@ section:not(.banner) {
     padding: 1.2em 2em;
 }
 
+@media (max-width: 1240px) {
+    .main-character h3{
+        margin-left: 0;
+        background-position: center;
+    text-align: center;
+    }
+}
+
 /* -------------------------------------------------------------------------- */
 /*                               style pour les nuages                        */
 /* -------------------------------------------------------------------------- */
@@ -174,4 +210,10 @@ section:not(.banner) {
     top: 35%;
     left: 730px;
     filter: blur(1.2rem);
+}
+
+@media (max-width: 920px) {
+    .story #place {
+        flex-direction : column;
+    }
 }
