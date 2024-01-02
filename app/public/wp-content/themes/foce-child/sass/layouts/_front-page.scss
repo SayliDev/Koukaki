@@ -1,0 +1,195 @@
+$cloudBlur: 1.2rem;
+/* Animation pour le banner */
+.banner {
+    animation: fadeInSlideDown 1s ease-out;
+
+    &__img {
+        z-index: 2;
+        animation: fadeInSlideUp 1s ease-out;
+
+        @media (max-width: 1373px) {
+            width: auto;
+        }
+    }
+
+    &___video {
+        position: absolute;
+        z-index: 1;
+
+        /* Retire la vidéo du banner pour les ecrans plus petits */
+        @media only screen and (max-width: 768px) {
+            display: none;
+        }
+    }
+}
+
+@keyframes fadeInSlideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(170px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.story {
+    &__article::after,
+    h2::after {
+        animation: rotate 15s linear infinite;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animation pour les sections au chargement de la page */
+section:not(.banner) {
+    opacity: 0;
+    animation: fadeInSection 1s ease-in-out forwards;
+}
+
+@keyframes fadeInSection {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/*              style pour la section de la nomination aux Oscars             */
+/* -------------------------------------------------------------------------- */
+
+.nomination-section {
+    margin-top: 20px;
+
+    h3 {
+        background-image: url("./assets/images/orange_nomination_bg.png");
+        padding: 2em 4.8em 2em 3.2em;
+        font-size: 2.625rem;
+        text-align: left;
+        background-position: initial;
+
+        @media (max-width: 1400px) {
+            padding: 2em 3em;
+            font-size: 2.125rem;
+            max-width: 56%;
+        }
+    }
+}
+
+.nomination-content {
+    display: flex;
+    align-items: center;
+    padding: 10em;
+
+    @media (max-width: 1373px) {
+        padding: 2em;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 1160px) {
+    .nomination-section h3 {
+        font-size: 1.7em;
+    }
+}
+
+@media (max-width: 945px) {
+    .nomination-section h3 {
+        font-size: 1.4em;
+        max-width: 54%;
+    }
+}
+
+/* styles responsives pour les écrans de taille moyenne stop*/
+
+/* -------------------------------------------------------------------------- */
+/*                   style pour le carrousel des personnages                  */
+/* -------------------------------------------------------------------------- */
+
+.carrousel-characters {
+    display: flex;
+}
+
+.swiper-wrapper {
+    img {
+        max-width: none;
+    }
+}
+
+/*A revoir*/
+.swiper-container {
+    overflow: hidden;
+    max-width: 100%;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+.story {
+    #characters {
+        text-align: left;
+    }
+}
+
+.main-character {
+    h3 {
+        background-position: left;
+        text-align: left;
+        margin-left: 12em;
+        padding: 1.2em 2em;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               style pour les nuages                        */
+/* -------------------------------------------------------------------------- */
+
+.clouds {
+    position: relative;
+
+    img {
+        position: absolute;
+        top: 10%;
+        left: 985px;
+        max-width: none;
+        filter: blur($cloudBlur);
+    }
+}
+
+.clouds {
+    img.little {
+        top: 35%;
+        left: 730px;
+        filter: blur($cloudBlur);
+    }
+
+    @media screen and (max-width: 768px), screen and (max-width: 480px) {
+        img,
+        img.little {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}

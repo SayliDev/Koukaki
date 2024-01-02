@@ -1,219 +1,176 @@
-/*
- Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
- Theme URI: https://www.koukaki.local
- Author: Studio Koukaki
- Author URI: https://www.koukaki.local
- Template: foce
- Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
- Version: 0.1
- */
-
- /* Animation pour le banner */
+@charset "UTF-8";
+/* Animation pour le banner */
 .banner {
-    animation: fadeInSlideDown 1s ease-out;
+  animation: fadeInSlideDown 1s ease-out;
 }
-
-.banner img {
-    z-index: 2;
-    animation: fadeInSlideUp 1s ease-out;
-} 
-
-
+.banner__img {
+  z-index: 2;
+  animation: fadeInSlideUp 1s ease-out;
+}
 @media (max-width: 1373px) {
-    .banner img {
-        width: auto; 
-    }
+  .banner__img {
+    width: auto;
+  }
 }
-
-.banner video {
-    position: absolute;
-    z-index: 1;
+.banner___video {
+  position: absolute;
+  z-index: 1;
+  /* Retire la vidéo du banner pour les ecrans plus petits */
+}
+@media only screen and (max-width: 768px) {
+  .banner___video {
+    display: none;
+  }
 }
 
 @keyframes fadeInSlideDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-100px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
 @keyframes fadeInSlideUp {
-    0% {
-        opacity: 0;
-        transform: translateY(170px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(170px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.story__article::after,
+.story h2::after {
+  animation: rotate 15s linear infinite;
 }
 
- /* Retire la vidéo du banner pour les ecrans plus petits */
- @media only screen and (max-width: 768px) { /*768px*/
-    .banner {
-        video {
-            display: none;
-          }
-    }
- }
-
-/* Animation pour les fleurs */
- .story__article::after, .story h2::after {
-    animation: rotate 15s linear infinite;
- }
-
- @keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
- }
-
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 /* Animation pour les sections au chargement de la page */
 section:not(.banner) {
-    opacity: 0;
-    animation: fadeInSection 1s ease-in-out forwards;
-
+  opacity: 0;
+  animation: fadeInSection 1s ease-in-out forwards;
 }
 
 @keyframes fadeInSection {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-
 /* -------------------------------------------------------------------------- */
 /*              style pour la section de la nomination aux Oscars             */
 /* -------------------------------------------------------------------------- */
-
 .nomination-section {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 .nomination-section h3 {
-    background-image: url("./assets/images/orange_nomination_bg.png");
-    padding: 2em 4.8em 2em 3.2em;
-    font-size: 2.625rem;
-    text-align: left;
-    background-position: initial;
+  background-image: url("./assets/images/orange_nomination_bg.png");
+  padding: 2em 4.8em 2em 3.2em;
+  font-size: 2.625rem;
+  text-align: left;
+  background-position: initial;
+}
+@media (max-width: 1400px) {
+  .nomination-section h3 {
+    padding: 2em 3em;
+    font-size: 2.125rem;
+    max-width: 56%;
+  }
 }
 
 .nomination-content {
-    display: flex;
-    align-items: center;
-    padding: 10em;
+  display: flex;
+  align-items: center;
+  padding: 10em;
 }
-
-/* styles responsives pour les écrans de taille moyenne */
-@media (max-width: 1400px) {
-    .nomination-section h3 {
-        padding: 2em 3em;
-        font-size: 2.125rem;
-        max-width: 56%;
-
-    }
-
-    .nomination-content {
-        padding: 2em;
-        flex-direction: column;
-        text-align: center;
-    }
-    .story__article{
-        padding-bottom: 0;
-    }
+@media (max-width: 1373px) {
+  .nomination-content {
+    padding: 2em;
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 @media (max-width: 1160px) {
-    .nomination-section h3 {
-        font-size: 1.7em;
-    }
+  .nomination-section h3 {
+    font-size: 1.7em;
+  }
 }
-
 @media (max-width: 945px) {
-    .nomination-section h3 {
-        font-size: 1.4em;
-        max-width: 54%;
-    }
-
+  .nomination-section h3 {
+    font-size: 1.4em;
+    max-width: 54%;
+  }
 }
-
-
+/* styles responsives pour les écrans de taille moyenne stop*/
 /* -------------------------------------------------------------------------- */
 /*                   style pour le carrousel des personnages                  */
 /* -------------------------------------------------------------------------- */
-
-.carrousel-characters{
- display: flex;
+.carrousel-characters {
+  display: flex;
 }
 
-.swiper-wrapper img{
-    max-width: none;
+.swiper-wrapper img {
+  max-width: none;
 }
 
 /*A revoir*/
 .swiper-container {
-    overflow: hidden; /* Masquer le débordement horizontal */
-    max-width: 100%; /* Assurer que le conteneur n'excède pas la largeur de l'écran */
-      overflow-x: hidden; /* Masquer le débordement horizontal */
-      text-align: center;
-  }
-  
-  .story #characters {
-
-    text-align: left;
+  overflow: hidden;
+  max-width: 100%;
+  overflow-x: hidden;
+  text-align: center;
 }
 
-.main-character h3{
-    background-position: left;
-    text-align: left;
-    margin-left: 12em;
-    padding: 1.2em 2em;
+.story #characters {
+  text-align: left;
 }
 
-@media (max-width: 1240px) {
-    .main-character h3{
-        margin-left: 0;
-        background-position: center;
-    text-align: center;
-    }
+.main-character h3 {
+  background-position: left;
+  text-align: left;
+  margin-left: 12em;
+  padding: 1.2em 2em;
 }
 
 /* -------------------------------------------------------------------------- */
 /*                               style pour les nuages                        */
 /* -------------------------------------------------------------------------- */
-
-.story #place {
-    background-image: url("./assets/images/Studio_Koukaki-image_place.png");
-}
-
 .clouds {
-    position: relative;
+  position: relative;
 }
-
 .clouds img {
-    position: absolute;
-    top: 10%; 
-    left: 985px;
-    max-width: none;
-    filter: blur(1.2rem);
+  position: absolute;
+  top: 10%;
+  left: 985px;
+  max-width: none;
+  filter: blur(1.2rem);
 }
 
-.clouds img.little{
-    top: 35%;
-    left: 730px;
-    filter: blur(1.2rem);
+.clouds img.little {
+  top: 35%;
+  left: 730px;
+  filter: blur(1.2rem);
+}
+@media screen and (max-width: 768px), screen and (max-width: 480px) {
+  .clouds img,
+  .clouds img.little {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
-@media (max-width: 920px) {
-    .story #place {
-        flex-direction : column;
-    }
-}
+/*# sourceMappingURL=style.css.map */
