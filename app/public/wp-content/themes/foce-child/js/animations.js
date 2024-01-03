@@ -6,10 +6,10 @@ const charactersCarousel = new Swiper(".swiper-container", {
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
-  loop: false,
+  loop: true,
   slidesPerView: "auto",
   spaceBetween: 60,
-  initialSlide: 1,
+  initialSlide: 0,
   coverflowEffect: {
     rotate: 10,
     stretch: 0,
