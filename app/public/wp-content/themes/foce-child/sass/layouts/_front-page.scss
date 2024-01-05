@@ -10,6 +10,8 @@ $cloudBlur: 1.2rem;
     img {
         z-index: 2;
         animation: fadeInSlideUp 1s ease-out;
+        animation: floatAnimation 3s ease-in-out infinite;
+
         @media (max-width: 1373px) {
             width: auto;
         }
@@ -23,6 +25,16 @@ $cloudBlur: 1.2rem;
         @media only screen and (max-width: 768px) {
             display: none;
         }
+    }
+}
+
+@keyframes floatAnimation {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
     }
 }
 
@@ -48,11 +60,13 @@ $cloudBlur: 1.2rem;
     }
 }
 
-.story {
-    &__article::after,
-    h2::after {
-        animation: rotate 15s linear infinite;
-    }
+.story__article::after,
+h2::after,
+h2::before,
+.site-footer ul::after,
+.site-footer::before,
+.site-footer::after {
+    animation: rotate 15s linear infinite;
 }
 
 @keyframes rotate {
@@ -63,20 +77,24 @@ $cloudBlur: 1.2rem;
         transform: rotate(360deg);
     }
 }
-
 /* Animation pour les sections au chargement de la page */
-section:not(.banner) {
-    opacity: 0;
-    animation: fadeInSection 1s ease-in-out forwards;
-}
+// section:not(.banner) {
+//     opacity: 0;
+//     animation: fadeInSection 1s ease-in-out forwards;
+// }
 
-@keyframes fadeInSection {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+// @keyframes fadeInSection {
+//     from {
+//         opacity: 0;
+//     }
+//     to {
+//         opacity: 1;
+//     }
+// }
+
+section:not(.banner) {
+    opacity: 0; /* Initialisez l'opacité à 0 pour que la section soit invisible au début */
+    transition: opacity 0.5s ease; /* Ajoutez une transition pour un fondu en douceur */
 }
 
 /* -------------------------------------------------------------------------- */
@@ -185,14 +203,13 @@ h2 {
 /* -------------------------------------------------------------------------- */
 /*                               style pour les nuages                        */
 /* -------------------------------------------------------------------------- */
-
 .clouds {
     position: relative;
 
     img {
         position: absolute;
         top: 10%;
-        left: 985px;
+        left: 1005px;
         max-width: none;
         filter: blur($cloudBlur);
     }
@@ -201,7 +218,7 @@ h2 {
 .clouds {
     img.little {
         top: 35%;
-        left: 730px;
+        left: 750px;
         filter: blur($cloudBlur);
     }
 

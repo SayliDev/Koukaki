@@ -7,8 +7,9 @@ function theme_enqueue_styles() {
     // Ajoute jQuery depuis CDN
     // wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.7.1.min.js', array(), '3.7.1', false);
     // Ajoute Swiper depuis CDN
-    wp_enqueue_style('swiper-style', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css', array(), '11.0.5');
-    wp_enqueue_script('swiper', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js', array('jquery'), '11.0.5', true);}
+    wp_enqueue_style('swiper-style', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.6/swiper-bundle.css', array(), '8.4.6');
+    wp_enqueue_script('swiper', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.6/swiper-bundle.min.js', array(), '8.4.6', true);}
+
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 
 

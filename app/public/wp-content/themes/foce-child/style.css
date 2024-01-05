@@ -10,6 +10,7 @@
 .banner img {
   z-index: 2;
   animation: fadeInSlideUp 1s ease-out;
+  animation: floatAnimation 3s ease-in-out infinite;
 }
 @media (max-width: 1373px) {
   .banner img {
@@ -27,6 +28,14 @@
   }
 }
 
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
 @keyframes fadeInSlideDown {
   0% {
     opacity: 0;
@@ -48,7 +57,11 @@
   }
 }
 .story__article::after,
-.story h2::after {
+h2::after,
+h2::before,
+.site-footer ul::after,
+.site-footer::before,
+.site-footer::after {
   animation: rotate 15s linear infinite;
 }
 
@@ -62,18 +75,10 @@
 }
 /* Animation pour les sections au chargement de la page */
 section:not(.banner) {
-  opacity: 0;
-  animation: fadeInSection 1s ease-in-out forwards;
+  opacity: 0; /* Initialisez l'opacité à 0 pour que la section soit invisible au début */
+  transition: opacity 0.5s ease; /* Ajoutez une transition pour un fondu en douceur */
 }
 
-@keyframes fadeInSection {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 /* -------------------------------------------------------------------------- */
 /*              style pour la section de la nomination aux Oscars             */
 /* -------------------------------------------------------------------------- */
@@ -174,14 +179,14 @@ h2 span {
 .clouds img {
   position: absolute;
   top: 10%;
-  left: 985px;
+  left: 1005px;
   max-width: none;
   filter: blur(1.2rem);
 }
 
 .clouds img.little {
   top: 35%;
-  left: 730px;
+  left: 750px;
   filter: blur(1.2rem);
 }
 @media screen and (max-width: 768px), screen and (max-width: 480px) {
