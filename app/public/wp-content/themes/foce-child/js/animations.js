@@ -62,6 +62,46 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /* -------------------------------------------------------------------------- */
+/*                       animation des titres au scroll                       */
+/* -------------------------------------------------------------------------- */
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Sélectionnez toutes les spans à l'intérieur des h2
+  const spans = document.querySelectorAll("h2 span");
+
+  // Options pour l'IntersectionObserver
+  const options = {
+    threshold: 0.8, // 80% de la section doit être visible
+  };
+
+  spans.forEach(function (spanElement) {
+    const observer = new IntersectionObserver(function (entries) {
+      // Pour chaque entrée observée
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          // Ajouter la classe "title-animation" à la span
+          spanElement.classList.add("title-animation");
+
+          // Si c'est la deuxième span, on ajoute également la classe "delay-title"
+          if (
+            spanElement ===
+            document.querySelector("#studio h2 span:nth-child(2)") // veut dire la deuxième span
+          ) {
+            spanElement.classList.add("delay-title");
+          }
+
+          // Enlever l'observer
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+
+    // Commencer à observer la span actuelle
+    observer.observe(spanElement);
+  });
+});
+
+/* -------------------------------------------------------------------------- */
 /*                vitesse de rotation en fonction du défilement               */
 /* -------------------------------------------------------------------------- */
 

@@ -58,7 +58,7 @@
 }
 .story__article::after,
 h2::after,
-h2::before,
+#studio h2::before,
 .site-footer ul::after,
 .site-footer::before,
 .site-footer::after {
@@ -73,7 +73,6 @@ h2::before,
     transform: rotate(360deg);
   }
 }
-/* Animation pour les sections au chargement de la page */
 section:not(.banner) {
   opacity: 0; /* Initialisez l'opacité à 0 pour que la section soit invisible au début */
   transition: opacity 0.5s ease; /* Ajoutez une transition pour un fondu en douceur */
@@ -195,6 +194,36 @@ h2 span {
     left: 50%;
     transform: translateX(-50%);
   }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                             Animation des titre                            */
+/* -------------------------------------------------------------------------- */
+.title-animation-first {
+  animation: title 1s ease;
+}
+
+.title-animation {
+  animation: title 1s ease;
+}
+
+@keyframes title {
+  0% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.delay-title {
+  animation: title 1s ease;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  transform: translateY(130px);
+}
+
+h2 span {
+  display: inline-block;
 }
 
 /*# sourceMappingURL=style.css.map */

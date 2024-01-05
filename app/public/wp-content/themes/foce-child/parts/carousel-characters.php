@@ -1,5 +1,5 @@
 <!-- This template is used to display the characters carousel -->
-        <h2>L'histoire</h2>
+        <h2><span>L'histoire</span></h2>
             <article id="" class="story__article">
                 <p><?php echo get_theme_mod('story'); ?></p>
             </article>
