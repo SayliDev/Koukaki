@@ -48,7 +48,9 @@
                         <li class="link-animation"><a href="#place">Lieu</a></li>
                         <li class="link-animation"><a href="#studio">Studio Koukaki</a></li>
                     </ul>
-
+                    <img class="burger-bottom-image"
+                        src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/studio_koukaki.svg"
+                        alt="Logo-Studio">
                 </div>
 
             </nav><!-- #site-navigation -->

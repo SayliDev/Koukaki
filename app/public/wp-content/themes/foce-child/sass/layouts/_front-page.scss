@@ -20,6 +20,9 @@ $cloudBlur: 1.2rem;
     video {
         position: absolute;
         z-index: 1;
+        max-width: 100%;
+        object-fit: cover;
+        min-height: inherit;
 
         /* Retire la vidéo du banner pour les ecrans plus petits */
         @media only screen and (max-width: 768px) {
@@ -151,19 +154,14 @@ section:not(.banner) {
     overflow: hidden;
     max-width: 100%;
     overflow-x: hidden;
-    text-align: center;
 }
 
 .story #characters div {
     flex: 1;
-    max-width: 1440px;
+    max-width: 100%;
 }
 
 .story {
-    #characters {
-        text-align: left;
-    }
-
     #place {
         max-width: 1440px;
         background-image: url("./assets/images/Studio_Koukaki-image_place.png");
@@ -186,6 +184,13 @@ h2 {
     }
 }
 
+#characters {
+    max-width: 100%;
+}
+
+.story #characters {
+    margin: 0em;
+}
 /* -------------------------------------------------------------------------- */
 /*                               style pour les nuages                        */
 /* -------------------------------------------------------------------------- */
@@ -257,6 +262,12 @@ h2 span {
     align-items: center;
 }
 
+@media screen and (max-width: 700px) {
+    .main-navigation {
+        height: 80px;
+    }
+}
+
 .site-title {
     flex-grow: 1; /* Permet au titre de prendre tout l'espace disponible */
     text-align: center;
@@ -276,7 +287,8 @@ h2 span {
 #menu {
     z-index: 0;
     min-height: 100%;
-    min-width: 1440px;
+    max-width: 1440px;
+    width: inherit;
     position: fixed;
     top: 5.7rem;
     // height: 0;
@@ -312,10 +324,13 @@ h2 span {
 
     text-align: center;
     font-family: Roboto Mono;
-    font-size: 64px;
+    font-size: 4rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    @media (max-width: 520px) {
+        font-size: 3.8rem;
+    }
 }
 
 #menu li a {
@@ -338,8 +353,17 @@ h2 span {
 //     }
 // }
 
-#menu img {
+.logo-container img {
     animation: floatAnimation 3s ease-in-out infinite;
+}
+
+.logo-container {
+    margin-top: 25px;
+}
+
+.burger-bottom-image {
+    // transform: translateY(10em);
+    padding: 100px;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -374,3 +398,5 @@ h2 span {
         animation-delay: 0.8s;
     }
 }
+
+/*------------- Elements décoratifs de la page -----------*/

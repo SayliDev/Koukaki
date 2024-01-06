@@ -20,6 +20,9 @@
 .banner video {
   position: absolute;
   z-index: 1;
+  max-width: 100%;
+  object-fit: cover;
+  min-height: inherit;
   /* Retire la vidéo du banner pour les ecrans plus petits */
 }
 @media only screen and (max-width: 768px) {
@@ -140,17 +143,13 @@ section:not(.banner) {
   overflow: hidden;
   max-width: 100%;
   overflow-x: hidden;
-  text-align: center;
 }
 
 .story #characters div {
   flex: 1;
-  max-width: 1440px;
+  max-width: 100%;
 }
 
-.story #characters {
-  text-align: left;
-}
 .story #place {
   max-width: 1440px;
   background-image: url("./assets/images/Studio_Koukaki-image_place.png");
@@ -167,6 +166,14 @@ h2 span {
 
 .main-character h3 {
   padding: 1.2em 2em;
+}
+
+#characters {
+  max-width: 100%;
+}
+
+.story #characters {
+  margin: 0em;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -235,6 +242,11 @@ h2 span {
   align-items: center;
 }
 
+@media screen and (max-width: 700px) {
+  .main-navigation {
+    height: 80px;
+  }
+}
 .site-title {
   flex-grow: 1; /* Permet au titre de prendre tout l'espace disponible */
   text-align: center;
@@ -250,7 +262,8 @@ h2 span {
 #menu {
   z-index: 0;
   min-height: 100%;
-  min-width: 1440px;
+  max-width: 1440px;
+  width: inherit;
   position: fixed;
   top: 5.7rem;
   background-color: #fff5e9;
@@ -282,10 +295,15 @@ h2 span {
   color: #000;
   text-align: center;
   font-family: Roboto Mono;
-  font-size: 64px;
+  font-size: 4rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+@media (max-width: 520px) {
+  #menu li {
+    font-size: 3.8rem;
+  }
 }
 
 #menu li a {
@@ -298,8 +316,16 @@ h2 span {
   animation: hover 0.5s;
 }
 
-#menu img {
+.logo-container img {
   animation: floatAnimation 3s ease-in-out infinite;
+}
+
+.logo-container {
+  margin-top: 25px;
+}
+
+.burger-bottom-image {
+  padding: 100px;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -329,5 +355,7 @@ h2 span {
 .link-animation:nth-child(4) {
   animation-delay: 0.8s;
 }
+
+/*------------- Elements décoratifs de la page -----------*/
 
 /*# sourceMappingURL=style.css.map */
