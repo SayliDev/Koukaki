@@ -106,3 +106,37 @@ document.addEventListener("DOMContentLoaded", function () {
 /* -------------------------------------------------------------------------- */
 
 /* script qui accelere la rotation des fleurs au scroll */
+
+/* -------------------------------------------------------------------------- */
+/*                                 Burger-menu                                */
+/* -------------------------------------------------------------------------- */
+
+// const burger = document.querySelector(".burger-menu");
+
+// burgerBtn.addEventListener("click", function () {
+//   console.log("click");
+// });
+const image = document.getElementById("burgerImage");
+document.querySelector(".burger-menu").addEventListener("click", function () {
+  document.getElementById("menu").classList.toggle("active");
+
+  // Vérifie quelle image est actuellement affichée et basculer vers l'autre
+  if (image.src.includes("burger.svg")) {
+    image.src =
+      "http://localhost:10137/wp-content/themes/foce-child/assets/images/burger_croix.svg";
+  } else {
+    image.src =
+      "http://localhost:10137/wp-content/themes/foce-child/assets/images/burger.svg";
+  }
+});
+
+// Fermer le menu quand on click sur un lien
+
+document.querySelectorAll("li").forEach((link) => {
+  link.addEventListener("click", () => {
+    document.getElementById("menu").classList.remove("active");
+    image.src =
+      "http://localhost:10137/wp-content/themes/foce-child/assets/images/burger.svg";
+  });
+  console.log(link);
+});
