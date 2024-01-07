@@ -400,3 +400,86 @@ h2 span {
 }
 
 /*------------- Elements décoratifs de la page -----------*/
+.cat-black {
+    position: absolute;
+    bottom: 20vw;
+    right: 0vw;
+    margin-bottom: 2vw;
+    margin-right: 2vw;
+    animation: floatCats 2s ease-in-out 1s infinite;
+}
+
+.cat-blue {
+    position: absolute;
+    bottom: 35vw;
+    right: 56vw;
+    margin-bottom: 2vw;
+    margin-right: 2vw;
+    animation: floatCats 2s ease-in-out infinite;
+}
+
+.cat-yellow {
+    position: absolute;
+    bottom: 8vw;
+    right: 65vw;
+    margin-bottom: 2vw;
+    margin-right: 2vw;
+    animation: floatCats 2s ease-in-out 0.5s infinite;
+}
+
+@keyframes floatCats {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.flower-menu {
+    position: absolute;
+    bottom: -14vw;
+    right: -32vw;
+    margin-bottom: 2vw;
+    margin-right: 2vw;
+    animation: rotate 15s linear infinite;
+}
+
+.sun-flower {
+    position: absolute;
+    bottom: 33vw;
+    right: 0vw;
+    margin-bottom: 2vw;
+    margin-right: 2vw;
+    animation: rotate 15s linear infinite;
+}
+
+.random-flower {
+    position: absolute;
+    bottom: 28vw;
+    right: -16vw;
+    margin-bottom: 2vw;
+    margin-right: 2vw;
+    width: 5%;
+    height: 7%;
+    animation: rotate 15s linear infinite;
+}
+
+.flower {
+    position: absolute;
+    bottom: 26vw;
+    right: 62vw;
+    margin-bottom: 2vw;
+    margin-right: 2vw;
+    animation: rotate 15s linear infinite;
+}
+
+.orchid-flower {
+    position: absolute;
+    bottom: 37vw;
+    right: 79vw;
+    margin-bottom: 2vw;
+    margin-right: 2vw;
+    animation: rotate 15s linear infinite;
+}

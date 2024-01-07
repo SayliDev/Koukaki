@@ -42,6 +42,25 @@
                     <div class="logo-container">
                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/menu_logo.png" alt="Logo">
                     </div>
+                    <!-- Flower -->
+                    <img class="flower-menu"
+                        src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/hibiscus_flower.png">
+                    <img class="sun-flower"
+                        src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/sunflower.png">
+                    <img class="random-flower"
+                        src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/random_flower.png">
+                    <img class="flower"
+                        src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/flower.png">
+                    <img class="orchid-flower"
+                        src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/orchid.png">
+
+                         <!-- Cats -->
+                    <img class="cat-black cat-animation"
+                        src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/cat_black.png">
+                    <img class="cat-blue cat-animation"
+                        src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/cat_blue.png">
+                    <img class="cat-yellow cat-animation"
+                        src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/cat_yellow.png">
                     <ul>
                         <li class="link-animation"><a href="#story">Histoire</a></li>
                         <li class="link-animation"><a href="#characters">Personnages</a></li>
