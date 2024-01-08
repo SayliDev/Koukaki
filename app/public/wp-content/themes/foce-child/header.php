@@ -34,9 +34,11 @@
                 <a class="site-title" href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                     <?php bloginfo('name'); ?>
                 </a>
-                <button class="burger-menu">
-                    <img id="burgerImage" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/burger.svg">
-                </button>
+                <!-- HTML -->
+<button class="burger-menu" id="toggleButton">
+    <img id="burgerImage" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/burger.svg">
+</button>
+
 
                 <div id="menu">
                     <div class="logo-container">

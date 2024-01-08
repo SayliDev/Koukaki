@@ -130,8 +130,7 @@ document.querySelector(".burger-menu").addEventListener("click", function () {
   }
 });
 
-// Fermer le menu quand on click sur un lien
-
+// Ferme le menu quand on click sur un lien
 document.querySelectorAll("li").forEach((link) => {
   link.addEventListener("click", () => {
     document.getElementById("menu").classList.remove("active");
@@ -139,4 +138,9 @@ document.querySelectorAll("li").forEach((link) => {
       "http://localhost:10137/wp-content/themes/foce-child/assets/images/burger.svg";
   });
   console.log(link);
+});
+
+// Rotation de l'icon en cliquant sur le bouton
+document.getElementById("toggleButton").addEventListener("click", function () {
+  this.classList.toggle("rotate");
 });
