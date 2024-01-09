@@ -14,7 +14,7 @@ get_header();
     <section id="story" class="story">
         <?php get_template_part('parts/carousel-characters'); ?>
         <article id="place">
-            <div class="clouds" style="display: none;">
+            <div class="clouds" >
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/big_cloud.png">
                 <img class="little" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/little_cloud.png">
             </div>

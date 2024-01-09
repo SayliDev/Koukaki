@@ -1,4 +1,10 @@
 $cloudBlur: 1.2rem;
+$mobile-breakpoint: 460px;
+$tablet-breakpoint: 820px;
+$medium-breakpoint: 945px;
+$large-breakpoint: 1160px;
+$xlarge-breakpoint: 1373px;
+$xxlarge-breakpoint: 1400px;
 /* Animation pour le banner */
 
 .page {
@@ -72,6 +78,16 @@ h2::after,
     animation: rotate 15s linear infinite;
 }
 
+/* Animationinitial */
+.test-animation {
+    animation: rotate 15s linear infinite;
+}
+
+/* Nouvelle classe avec la nouvelle animation */
+.accelerate-animation {
+    animation: rotate 1s linear infinite;
+}
+
 @keyframes rotate {
     0% {
         transform: rotate(0deg);
@@ -84,53 +100,6 @@ h2::after,
 section:not(.banner) {
     opacity: 0;
     transition: opacity 0.5s ease;
-}
-
-/* -------------------------------------------------------------------------- */
-/*              style pour la section de la nomination aux Oscars             */
-/* -------------------------------------------------------------------------- */
-
-.nomination-section {
-    margin-top: 20px;
-
-    h3 {
-        background-image: url("./assets/images/orange_nomination_bg.png");
-        padding: 2em 4.8em 2em 3.2em;
-        font-size: 2.625rem;
-        text-align: left;
-        background-position: initial;
-
-        @media (max-width: 1400px) {
-            padding: 2em 3em;
-            font-size: 2.125rem;
-            max-width: 56%;
-        }
-    }
-}
-
-.nomination-content {
-    display: flex;
-    align-items: center;
-    padding: 10em;
-
-    @media (max-width: 1373px) {
-        padding: 2em;
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-@media (max-width: 1160px) {
-    .nomination-section h3 {
-        font-size: 1.7em;
-    }
-}
-
-@media (max-width: 945px) {
-    .nomination-section h3 {
-        font-size: 1.4em;
-        max-width: 54%;
-    }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -179,6 +148,16 @@ h2 {
 .main-character {
     h3 {
         padding: 1.2em 2em;
+        text-align: left;
+        background-position: left;
+
+        @media screen and (max-width: 564px) {
+            text-align: center;
+            background-position: center;
+        }
+        @media screen and (max-width: 430px) {
+            font-size: 2rem;
+        }
     }
 }
 
@@ -186,9 +165,6 @@ h2 {
     max-width: 100%;
 }
 
-.story #characters {
-    margin: 0em;
-}
 /* -------------------------------------------------------------------------- */
 /*                               style pour les nuages                        */
 /* -------------------------------------------------------------------------- */
@@ -201,6 +177,10 @@ h2 {
         left: 1005px;
         max-width: none;
         filter: blur($cloudBlur);
+        /*en dessous de 1420px on enleve les nuages */
+        @media screen and (max-width: 1420px) {
+            display: none;
+        }
     }
 }
 
@@ -219,6 +199,82 @@ h2 {
         }
     }
 }
+
+/* -------------------------------------------------------------------------- */
+/*              style pour la section de la nomination aux Oscars             */
+/* -------------------------------------------------------------------------- */
+.nomination-section {
+    margin-top: 20px;
+
+    h3 {
+        background-image: url("./assets/images/orange_nomination_bg.png");
+        padding: 2em 4.8em 2em 3.2em;
+        font-size: 2.625rem;
+        text-align: left;
+        background-position: initial;
+
+        @media (max-width: $xxlarge-breakpoint) {
+            padding: 2em 3em;
+            font-size: 2.125rem;
+            max-width: 56%;
+        }
+
+        @media (max-width: $large-breakpoint) {
+            font-size: 1.7em;
+        }
+
+        @media (max-width: $medium-breakpoint) {
+            font-size: 1.4em;
+            max-width: 54%;
+        }
+
+        @media (max-width: $tablet-breakpoint) {
+            font-size: 1em;
+            max-width: 45%;
+        }
+
+        @media (max-width: 720px) {
+            font-size: 1em;
+            max-width: 54%;
+        }
+
+        @media (max-width: 594px) {
+            font-size: 1em;
+            max-width: 65%;
+        }
+
+        @media (max-width: 504px) {
+            font-size: 1em;
+            max-width: 80%;
+        }
+
+        @media (max-width: 420px) {
+            font-size: 1em;
+            max-width: 98%;
+        }
+    }
+}
+
+.nomination-content {
+    display: flex;
+    align-items: center;
+    padding: 10em;
+
+    @media (max-width: $xlarge-breakpoint) {
+        padding: 2em;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+#studio {
+    h2 {
+        @media (max-width: $mobile-breakpoint) {
+            font-size: 2.5rem;
+        }
+    }
+}
+
 /* -------------------------------------------------------------------------- */
 /*                             Animation des titre                            */
 /* -------------------------------------------------------------------------- */

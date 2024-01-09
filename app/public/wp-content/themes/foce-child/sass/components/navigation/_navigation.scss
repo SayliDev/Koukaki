@@ -26,6 +26,17 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
+	@media screen and (max-width: 700px) {
+		height: 80px;
+	}
+
+	.site-title {
+		@media (max-width: 518px) {
+			font-size: 17px;
+			margin-left: 5%;
+		}
+	}
 }
 
 /* Styles responsifs pour la navigation principale */
@@ -234,43 +245,43 @@
 /* Media queries pour les ajustements responsifs */
 @media (max-width: 1660px) {
 	.cat-black {
-		bottom: 8vw;
+		bottom: 14vw;
 		right: 20vw;
 	}
 
 	.cat-blue {
-		bottom: 35vw;
+		bottom: 41vw;
 		right: 65vw;
 	}
 
 	.cat-yellow {
-		bottom: 8vw;
+		bottom: 14vw;
 		right: 78vw;
 	}
 
 	.flower-menu {
-		bottom: -18vw;
+		bottom: -10;
 		right: -26vw;
 	}
 
 	.sun-flower {
-		bottom: 37vw;
+		bottom: 39vw;
 		right: 5vw;
 	}
 
 	.random-flower {
-		bottom: 31vw;
-		right: -10vw;
+		bottom: 37vw;
+		right: -16vw;
 	}
 
 	.flower {
-		bottom: 24vw;
-		right: 69vw;
+		bottom: 30vw;
+		right: 63vw;
 	}
 
 	.orchid-flower {
-		bottom: 37vw;
-		right: 86vw;
+		bottom: 43vw;
+		right: 80vw;
 	}
 }
 
