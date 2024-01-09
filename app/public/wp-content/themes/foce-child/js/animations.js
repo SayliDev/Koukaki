@@ -27,10 +27,13 @@ window.addEventListener("scroll", function () {
   let scrollPosition = window.scrollY;
   let clouds = document.querySelector(".clouds");
 
-  // Calcul de la nouvelle position
-  let newPosition = -600 + scrollPosition * 0.45;
+  // Amplitude maximale de 300 pixels
+  let amplitude = 300;
 
-  // Condition : met à jour la position que si la nouvelle position est positive
+  // Calcul de la nouvelle position avec une amplitude maximale
+  let newPosition = -amplitude + scrollPosition * 0.3;
+
+  // Met à jour la position que si la nouvelle position est positive
   if (newPosition > 0) {
     clouds.style.right = newPosition + "px";
   }
@@ -104,43 +107,3 @@ document.addEventListener("DOMContentLoaded", function () {
 /* -------------------------------------------------------------------------- */
 /*                vitesse de rotation en fonction du défilement               */
 /* -------------------------------------------------------------------------- */
-
-/* script qui accelere la rotation des fleurs au scroll */
-
-/* -------------------------------------------------------------------------- */
-/*                                 Burger-menu                                */
-/* -------------------------------------------------------------------------- */
-
-// const burger = document.querySelector(".burger-menu");
-
-// burgerBtn.addEventListener("click", function () {
-//   console.log("click");
-// });
-const image = document.getElementById("burgerImage");
-document.querySelector(".burger-menu").addEventListener("click", function () {
-  document.getElementById("menu").classList.toggle("active");
-
-  // Vérifie quelle image est actuellement affichée et basculer vers l'autre
-  if (image.src.includes("burger.svg")) {
-    image.src =
-      "http://localhost:10137/wp-content/themes/foce-child/assets/images/burger_croix.svg";
-  } else {
-    image.src =
-      "http://localhost:10137/wp-content/themes/foce-child/assets/images/burger.svg";
-  }
-});
-
-// Ferme le menu quand on click sur un lien
-document.querySelectorAll("li").forEach((link) => {
-  link.addEventListener("click", () => {
-    document.getElementById("menu").classList.remove("active");
-    image.src =
-      "http://localhost:10137/wp-content/themes/foce-child/assets/images/burger.svg";
-  });
-  console.log(link);
-});
-
-// Rotation de l'icon en cliquant sur le bouton
-document.getElementById("toggleButton").addEventListener("click", function () {
-  this.classList.toggle("rotate");
-});

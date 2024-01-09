@@ -10,9 +10,12 @@ function theme_enqueue_styles()
     // Ajoute Swiper depuis CDN
     wp_enqueue_style('swiper-style', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.6/swiper-bundle.css', array(), '8.4.6');
     wp_enqueue_script('swiper', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.6/swiper-bundle.min.js', array(), '8.4.6', true);
+    
+// decharge le script 'navigation' du thème parent
+    wp_dequeue_script('navigation');
+    // Enqueue du script de navigation personnalisé
+    wp_enqueue_script('navigation-script', get_stylesheet_directory_uri() . '/js/navigation.js', array(), null, true);
 }
-wp_enqueue_script('navigation-script', get_template_directory_uri() . '/js/navigation.js', array(), '1.0', true);
-
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 
 

@@ -183,7 +183,7 @@ h2 span {
   text-align: left;
   background-position: left;
 }
-@media screen and (max-width: 564px) {
+@media screen and (max-width: 920px) {
   .main-character h3 {
     text-align: center;
     background-position: center;
@@ -431,6 +431,7 @@ h2 span {
   justify-content: center;
   max-height: 80%;
   gap: 55px;
+  padding: 0;
 }
 
 #menu li {
@@ -469,7 +470,7 @@ h2 span {
 
 /* Styles de l'image burger en bas */
 .burger-bottom-image {
-  padding: 100px;
+  padding-top: 10vh;
 }
 
 /* Styles de l'animation des liens */

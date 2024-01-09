@@ -93,6 +93,7 @@
 	justify-content: center;
 	max-height: 80%;
 	gap: 55px;
+	padding: 0;
 }
 
 #menu li {
@@ -130,7 +131,7 @@
 
 /* Styles de l'image burger en bas */
 .burger-bottom-image {
-	padding: 100px;
+	padding-top: 10vh;
 }
 
 /* Styles de l'animation des liens */
