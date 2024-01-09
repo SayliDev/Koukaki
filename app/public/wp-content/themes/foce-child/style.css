@@ -59,13 +59,16 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 .banner img {
   z-index: 2;
-  animation: fadeInSlideUp 1s ease-out;
-  animation: floatAnimation 3s ease-in-out infinite;
+  animation: fadeInSlideUp 1s ease-out, floatAnimation 3s ease-in-out infinite 1s;
+  position: relative;
 }
 @media (max-width: 1373px) {
   .banner img {
     width: auto;
   }
+}
+.banner img .foreground-image {
+  transform: translate(-50%, -50%);
 }
 .banner video {
   position: absolute;

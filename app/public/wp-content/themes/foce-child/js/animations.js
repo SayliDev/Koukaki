@@ -105,5 +105,17 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /* -------------------------------------------------------------------------- */
-/*                vitesse de rotation en fonction du défilement               */
+/*                    animation du parallaxe de l'image                       */
 /* -------------------------------------------------------------------------- */
+
+document.addEventListener("DOMContentLoaded", function () {
+  const parallaxSection = document.querySelector(".banner");
+  const parallaxImage = document.querySelector(".foreground-image");
+
+  if (parallaxSection && parallaxImage) {
+    window.addEventListener("scroll", function () {
+      const scrollPosition = window.scrollY;
+      parallaxImage.style.top = 0 + scrollPosition * 0.2 + "px";
+    });
+  }
+});
