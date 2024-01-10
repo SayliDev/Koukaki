@@ -7,9 +7,6 @@ $xlarge-breakpoint: 1373px;
 $xxlarge-breakpoint: 1400px;
 /* Animation pour le banner */
 
-.page {
-    overflow-x: visible;
-}
 .banner {
     animation: fadeInSlideDown 1s ease-out;
 
@@ -83,14 +80,14 @@ h2::after,
     animation: rotate 15s linear infinite;
 }
 
-/* Animationinitial */
-.test-animation {
-    animation: rotate 15s linear infinite;
+.story h2.flowers-animation::after {
+    animation: rotate 3s linear infinite;
+    // debug
+    border: 1px solid red;
 }
 
-/* Nouvelle classe avec la nouvelle animation */
-.accelerate-animation {
-    animation: rotate 1s linear infinite;
+.flowers-animation {
+    animation: rotate 3s linear infinite;
 }
 
 @keyframes rotate {
@@ -155,10 +152,12 @@ h2 {
         padding: 1.2em 2em;
         text-align: left;
         background-position: left;
+        margin-left: 16vw;
 
         @media screen and (max-width: 920px) {
             text-align: center;
             background-position: center;
+            margin-left: 0;
         }
         @media screen and (max-width: 430px) {
             font-size: 2rem;
@@ -167,7 +166,7 @@ h2 {
 }
 
 #characters {
-    max-width: 100%;
+    max-width: 100vw;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -310,3 +309,5 @@ h2 {
 h2 span {
     display: inline-block;
 }
+
+/*--------------------------------------------------------------------------*/

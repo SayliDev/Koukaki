@@ -11,9 +11,9 @@ const charactersCarousel = new Swiper(".swiper-container", {
   spaceBetween: 100,
   initialSlide: 0,
   coverflowEffect: {
-    rotate: 10,
+    rotate: 45,
     stretch: 0,
-    depth: 10,
+    depth: 100,
     modifier: 1,
     slideShadows: false,
   },
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   fadeInSection();
 
-  // Appelez la fonction lors du défilement
+  // Appele la fonction lors du défilement
   window.addEventListener("scroll", fadeInSection);
 });
 
@@ -119,3 +119,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+/* -------------------------------------------------------------------------- */
+/*                        fleurs qui accélère au scroll                       */
+/* -------------------------------------------------------------------------- */
+
+// seletionne les fleurs de  h2::after
+
+// const fleurs = document.querySelector("story h2::after");
+// let fleurs = document.querySelector(".story h2::after");
+// console.log(fleurs);
+
+// const fleurs = document.querySelector(".story h2");
+
+// fleurs.classList.add("flowers::after");
+
+// console.log(fleurs);
+
+// const h2Element = document.querySelector('.story h2');
+
+// h2Element.classList.add('flowers');
+
+// const fleurs = document.querySelector(".story h2");
+
+// fleurs.classList.add("flowers-animation");
+
+const fleurs = document.querySelectorAll(".story h2");
+
+fleurs.classList.add("flowers-animation");
+
+console.log(fleurs);

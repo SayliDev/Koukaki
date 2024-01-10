@@ -29,7 +29,7 @@ get_header();
 
 
     <section id="studio">
-        <h2><span>Studio </span><span>Koukaki</span></h2>
+        <h2><span>Studio</span> <span>Koukaki</span></h2>
         <div>
             <p>Acteur majeur de l’animation, Koukaki est un studio intégré fondé en 2012 qui créé, produit et distribue
                 des programmes originaux dans plus de 190 pays pour les enfants et les adultes. Nous avons deux sections
