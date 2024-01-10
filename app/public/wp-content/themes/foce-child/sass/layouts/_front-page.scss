@@ -80,14 +80,23 @@ h2::after,
     animation: rotate 15s linear infinite;
 }
 
-.story h2.flowers-animation::after {
-    animation: rotate 3s linear infinite;
+// .story h2.flowers-animation::after {
+//     animation: rotate 3s linear infinite;
+//     // debug
+//     border: 1px solid red;
+// }
+
+.flowers-animation::after,
+.flowers-animation::before {
+    animation: rotate 3s linear infinite !important;
     // debug
     border: 1px solid red;
 }
 
-.flowers-animation {
-    animation: rotate 3s linear infinite;
+.exclude-flowers-animation::before {
+    animation: none !important;
+    // debug
+    border: 2px dashed red;
 }
 
 @keyframes rotate {
@@ -118,7 +127,6 @@ section:not(.banner) {
     }
 }
 
-/*A revoir*/
 .swiper-container {
     overflow: hidden;
     max-width: 100%;

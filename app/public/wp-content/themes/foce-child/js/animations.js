@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Pour chaque entrée observée
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          // Ajouter la classe "title-animation" à la span
+          // Ajoute la classe "title-animation" à la span
           spanElement.classList.add("title-animation");
 
           // Si c'est la deuxième span, on ajoute également la classe "delay-title"
@@ -93,13 +93,13 @@ document.addEventListener("DOMContentLoaded", function () {
             spanElement.classList.add("delay-title");
           }
 
-          // Enlever l'observer
+          // Enleve l'observer
           observer.unobserve(entry.target);
         }
       });
     }, options);
 
-    // Commencer à observer la span actuelle
+    // Commence à observer la span actuelle
     observer.observe(spanElement);
   });
 });
@@ -144,8 +144,78 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // fleurs.classList.add("flowers-animation");
 
-const fleurs = document.querySelectorAll(".story h2");
+// const fleurs = document.querySelector(".story h2");
+// const animationFleurs = document.querySelector(".flowers-animation");
 
-fleurs.classList.add("flowers-animation");
+// fleurs.classList.add("flowers-animation");
 
-console.log(fleurs);
+// console.log(fleurs);
+
+// const elements = document.querySelectorAll(
+//   ".story__article, .story h2"
+// );
+
+// elements.forEach((element) => {
+//   element.classList.add("flowers-animation");
+// });
+
+//     elements.forEach(element => {
+//       element.classList.remove('');
+//     });
+//   },
+// }
+
+const elementsAAnimer = document.querySelectorAll(
+  ".story__article, h2, #studio h2, .site-footer ul, .site-footer"
+);
+
+//stock le timer
+let timerDeScroll;
+
+// fonction pour ajouter ou retirer la classe en fonction du défilement
+function gererDefilement() {
+  elementsAAnimer.forEach((element) => {
+    element.classList.add("flowers-animation");
+  });
+
+  clearTimeout(timerDeScroll);
+
+  timerDeScroll = setTimeout(() => {
+    elementsAAnimer.forEach((element) => {
+      element.classList.remove("flowers-animation");
+    });
+  }, 200); // stop l'animation apres...
+}
+
+// Ajoutez un écouteur d'événements de défilement
+window.addEventListener("scroll", gererDefilement);
+
+/*\\\\\\\\\\\\\\\\\\\\\\\\\\\\   autre parti du script   ///////////////////////////*/
+
+// ajoute une classe "exclure-animation-fleurs" (dans le css) aux éléments à exclure (les tiges)
+const elementsAExclure = document.querySelectorAll(
+  ".story h2, .story__article"
+);
+
+elementsAExclure.forEach((element) => {
+  element.classList.add("exclude-flowers-animation");
+});
+
+//   const animate = document.querySelectorAll('.story__article, h2, #studio h2, .site-footer ul, .site-footer');
+//   const scrollPosition = window.scrollY;
+
+//   animate.forEach(element => {
+//     animate.classList.add('flowers-animation');
+//   });
+
+//  FAIRE TIMEOUT
+
+/*------------------------------------------------------------------- */
+
+// const animate = document.querySelectorAll(
+//   ".story__article, h2, #studio h2, .site-footer ul, .site-footer"
+// );
+
+// window.addEventListener("scroll",);
+
+// const elementsToExclude = document.querySelectorAll(".story h2, .story__article");
