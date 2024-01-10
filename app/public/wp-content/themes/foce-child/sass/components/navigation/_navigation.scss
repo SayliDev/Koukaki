@@ -87,6 +87,10 @@
 	}
 }
 
+.no-scroll {
+	overflow: hidden;
+}
+
 /* Styles de la liste du menu */
 #menu ul {
 	display: grid;
