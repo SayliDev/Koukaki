@@ -1,27 +1,28 @@
 <?php
 
-get_header();
-?>
+get_header(); ?>
 
 <main id="primary" class="site-main">
     <section class="banner">
-        <img class="foreground-image" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> "
+        <img class="foreground-image" src="<?php echo get_template_directory_uri() .
+            "/assets/images/logo.png"; ?> "
             alt="logo Fleurs d'oranger & chats errants">
         <video
-            src="<?php echo get_stylesheet_directory_uri() . '/assets/videos/studio_koukaki_video_header_sans_son.mp4'; ?>"
+            src="<?php echo get_stylesheet_directory_uri() .
+                "/assets/videos/studio_koukaki_video_header_sans_son.mp4"; ?>"
             loop muted autoplay></video>
     </section>
     <section id="story" class="story">
-        <?php get_template_part('parts/carousel-characters'); ?>
+        <?php get_template_part("parts/carousel-characters"); ?>
         <article id="place">
             <div class="clouds" >
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/big_cloud.png">
                 <img class="little" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/little_cloud.png">
             </div>
             <div>
-                <h3>Le Lieu</h3>
+                <h3><span>Le Lieu</span></h3>
                 <p>
-                    <?php echo get_theme_mod('place'); ?>
+                    <?php echo get_theme_mod("place"); ?>
                 </p>
             </div>
         </article>
@@ -42,8 +43,7 @@ get_header();
                 errants”.</p>
         </div>
     </section>
-    <?php get_template_part('parts/nomination-section'); ?>
+    <?php get_template_part("parts/nomination-section"); ?>
 </main><!-- #main -->
 
-<?php
-get_footer();
+<?php get_footer();

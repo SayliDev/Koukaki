@@ -20,7 +20,6 @@
 	}
 }
 
-/* -------------------------------------------------------------------------- */
 /* Styles communs pour la navigation principale */
 .main-navigation {
 	display: flex;
@@ -36,13 +35,6 @@
 			font-size: 17px;
 			margin-left: 5%;
 		}
-	}
-}
-
-/* Styles responsifs pour la navigation principale */
-@media screen and (max-width: 700px) {
-	.main-navigation {
-		height: 80px;
 	}
 }
 
@@ -78,55 +70,14 @@
 	animation: fadeIn 0.3s;
 }
 
-@keyframes fadeIn {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-
 .no-scroll {
 	overflow: hidden;
-}
-
-/* Styles de la liste du menu */
-#menu ul {
-	display: grid;
-	justify-content: center;
-	max-height: 80%;
-	gap: 55px;
-	padding: 0;
-}
-
-#menu li {
-	color: #000;
-	text-align: center;
-	font-family: Roboto Mono;
-	font-size: 4rem;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
-
-	@media (max-width: 520px) {
-		font-size: 3.8rem;
-	}
-}
-
-#menu li a {
-	transition: 0.3s;
 }
 
 #menu li a:hover {
 	text-shadow: 0px 0px 14px #ff5c00;
 	color: #000;
 	animation: hover 0.5s;
-}
-
-/* Styles du conteneur du logo */
-.logo-container img {
-	animation: floatAnimation 3s ease-in-out infinite;
 }
 
 .logo-container {
@@ -136,39 +87,6 @@
 /* Styles de l'image burger en bas */
 .burger-bottom-image {
 	padding-top: 10vh;
-}
-
-/* Styles de l'animation des liens */
-.link-animation {
-	opacity: 0;
-	animation: fadeInLink 0.5s forwards;
-
-	@keyframes fadeInLink {
-		0% {
-			transform: translateY(20px);
-			opacity: 0;
-		}
-		100% {
-			transform: translateY(0);
-			opacity: 1;
-		}
-	}
-
-	&:nth-child(1) {
-		animation-delay: 0.2s;
-	}
-
-	&:nth-child(2) {
-		animation-delay: 0.4s;
-	}
-
-	&:nth-child(3) {
-		animation-delay: 0.6s;
-	}
-
-	&:nth-child(4) {
-		animation-delay: 0.8s;
-	}
 }
 
 /* Styles des éléments décoratifs */
@@ -183,68 +101,6 @@
 	position: absolute;
 	margin-bottom: 2vw;
 	margin-right: 2vw;
-}
-
-/* Keyframe pour le mouvement des chats */
-@keyframes floatCats {
-	0%,
-	100% {
-		transform: translateY(0);
-	}
-	50% {
-		transform: translateY(-5px);
-	}
-}
-
-/* Styles communs pour les éléments décoratifs */
-.cat-black {
-	bottom: 20vw;
-	right: 0vw;
-	animation: floatCats 2s ease-in-out 1s infinite;
-}
-
-.cat-blue {
-	bottom: 35vw;
-	right: 56vw;
-	animation: floatCats 2s ease-in-out infinite;
-}
-
-.cat-yellow {
-	bottom: 8vw;
-	right: 65vw;
-	animation: floatCats 2s ease-in-out 0.5s infinite;
-}
-
-.flower-menu {
-	bottom: -14vw;
-	right: -32vw;
-	animation: rotate 15s linear infinite;
-}
-
-.sun-flower {
-	bottom: 33vw;
-	right: 0vw;
-	animation: rotate 15s linear infinite;
-}
-
-.random-flower {
-	bottom: 28vw;
-	right: -16vw;
-	width: 5%;
-	height: 7%;
-	animation: rotate 15s linear infinite;
-}
-
-.flower {
-	bottom: 26vw;
-	right: 62vw;
-	animation: rotate 15s linear infinite;
-}
-
-.orchid-flower {
-	bottom: 37vw;
-	right: 79vw;
-	animation: rotate 15s linear infinite;
 }
 
 /* Media queries pour les ajustements responsifs */

@@ -52,4 +52,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 @import "layouts/front-page.scss";
 
+@import "base/elements/_footer.scss";
+
+@import "animations/animations.scss";
+
+@import "base/typographie/_headings.scss";
+
 @import "components/navigation/_navigation.scss";

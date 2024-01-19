@@ -1,25 +1,4 @@
 /* -------------------------------------------------------------------------- */
-/*                    carrousel des personnages avec Swiper                   */
-/* -------------------------------------------------------------------------- */
-
-const charactersCarousel = new Swiper(".swiper-container", {
-  effect: "coverflow",
-  grabCursor: true,
-  centeredSlides: true,
-  loop: true,
-  slidesPerView: "auto",
-  spaceBetween: 100,
-  initialSlide: 0,
-  coverflowEffect: {
-    rotate: 45,
-    stretch: 0,
-    depth: 100,
-    modifier: 1,
-    slideShadows: false,
-  },
-});
-
-/* -------------------------------------------------------------------------- */
 /*                        effet de parallaxe des nuages                       */
 /* -------------------------------------------------------------------------- */
 
@@ -44,24 +23,32 @@ window.addEventListener("scroll", function () {
 /* -------------------------------------------------------------------------- */
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Sélectionne toutes les sections de la page
   const sections = document.querySelectorAll("section");
 
-  function fadeInSection() {
+  // Fonction pour faire apparaître les sections au défilement
+  function apparitionDansLaSection() {
     sections.forEach(function (section) {
-      const sectionTop = section.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
+      // Obtient la position de la section par rapport à la fenêtre
+      const positionSection = section.getBoundingClientRect().top;
+      const hauteurFenetre = window.innerHeight;
 
-      const declenchement = windowHeight * 0.8;
+      // Déclenchement à 80% de la hauteur de la fenêtre
+      const pointDeclenchement = hauteurFenetre * 0.8;
 
-      if (sectionTop < declenchement) {
+      // Si la section est en haut de la fenêtre ou dépasse le point de déclenchement
+      if (positionSection < pointDeclenchement) {
+        // Faites apparaître la section
         section.style.opacity = "1";
       }
     });
   }
-  fadeInSection();
 
-  // Appele la fonction lors du défilement
-  window.addEventListener("scroll", fadeInSection);
+  // Appelez la fonction lors du chargement de la page
+  apparitionDansLaSection();
+
+  // Appelez la fonction lors du défilement de la page
+  window.addEventListener("scroll", apparitionDansLaSection);
 });
 
 /* -------------------------------------------------------------------------- */
@@ -69,8 +56,8 @@ document.addEventListener("DOMContentLoaded", function () {
 /* -------------------------------------------------------------------------- */
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Sélectionnez toutes les spans à l'intérieur des h2
-  const spans = document.querySelectorAll("h2 span");
+  // Sélectionne toutes les spans à l'intérieur des h2 et h3
+  const spans = document.querySelectorAll("h2 span, h3 span");
 
   // Options pour l'IntersectionObserver
   const options = {
@@ -78,29 +65,32 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   spans.forEach(function (spanElement) {
-    const observer = new IntersectionObserver(function (entries) {
-      // Pour chaque entrée observée
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
+    const observateurIntersection = new IntersectionObserver(function (
+      entrees
+    ) {
+      // Pour chaque entree observée
+      entrees.forEach(function (entree) {
+        if (entree.isIntersecting) {
           // Ajoute la classe "title-animation" à la span
           spanElement.classList.add("title-animation");
 
           // Si c'est la deuxième span, on ajoute également la classe "delay-title"
           if (
             spanElement ===
-            document.querySelector("#studio h2 span:nth-child(2)") // veut dire la deuxième span
+            document.querySelector("#studio h2 span:nth-child(2)")
           ) {
             spanElement.classList.add("delay-title");
           }
 
-          // Enleve l'observer
-          observer.unobserve(entry.target);
+          // Arrête d'observer la span actuelle
+          observateurIntersection.unobserve(entree.target);
         }
       });
-    }, options);
+    },
+    options);
 
     // Commence à observer la span actuelle
-    observer.observe(spanElement);
+    observateurIntersection.observe(spanElement);
   });
 });
 
@@ -124,49 +114,8 @@ document.addEventListener("DOMContentLoaded", function () {
 /*                        fleurs qui accélère au scroll                       */
 /* -------------------------------------------------------------------------- */
 
-// seletionne les fleurs de  h2::after
-
-// const fleurs = document.querySelector("story h2::after");
-// let fleurs = document.querySelector(".story h2::after");
-// console.log(fleurs);
-
-// const fleurs = document.querySelector(".story h2");
-
-// fleurs.classList.add("flowers::after");
-
-// console.log(fleurs);
-
-// const h2Element = document.querySelector('.story h2');
-
-// h2Element.classList.add('flowers');
-
-// const fleurs = document.querySelector(".story h2");
-
-// fleurs.classList.add("flowers-animation");
-
-// const fleurs = document.querySelector(".story h2");
-// const animationFleurs = document.querySelector(".flowers-animation");
-
-// fleurs.classList.add("flowers-animation");
-
-// console.log(fleurs);
-
-// const elements = document.querySelectorAll(
-//   ".story__article, .story h2"
-// );
-
-// elements.forEach((element) => {
-//   element.classList.add("flowers-animation");
-// });
-
-//     elements.forEach(element => {
-//       element.classList.remove('');
-//     });
-//   },
-// }
-
 const elementsAAnimer = document.querySelectorAll(
-  ".story__article, h2, #studio h2, .site-footer ul, .site-footer"
+  ".story__article, h2, #studio h2, .nomination-content h3, .site-footer ul"
 );
 
 //stock le timer
@@ -200,22 +149,3 @@ const elementsAExclure = document.querySelectorAll(
 elementsAExclure.forEach((element) => {
   element.classList.add("exclude-flowers-animation");
 });
-
-//   const animate = document.querySelectorAll('.story__article, h2, #studio h2, .site-footer ul, .site-footer');
-//   const scrollPosition = window.scrollY;
-
-//   animate.forEach(element => {
-//     animate.classList.add('flowers-animation');
-//   });
-
-//  FAIRE TIMEOUT
-
-/*------------------------------------------------------------------- */
-
-// const animate = document.querySelectorAll(
-//   ".story__article, h2, #studio h2, .site-footer ul, .site-footer"
-// );
-
-// window.addEventListener("scroll",);
-
-// const elementsToExclude = document.querySelectorAll(".story h2, .story__article");
